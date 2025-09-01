@@ -1,0 +1,9 @@
+   @using travelproject.Models.Classes
+@model travelproject.Models.MyIndexViewModel
+
+   <ol>
+        @foreach(var blog in Model.AllBlogs)
+        {
+            <li>@blog.Title</li>
+        }
+    </ol>

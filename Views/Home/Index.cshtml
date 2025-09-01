@@ -1,5 +1,7 @@
 ﻿@using travelproject.Models.Classes
-@model List<MyBlog>
+
+@model travelproject.Models.MyIndexViewModel
+
 @{
     ViewData["Title"] = "Home";
 }
@@ -132,7 +134,7 @@
         <div class="col-md-8">
             <div id="travelSlider" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    @foreach(var x in Model)
+                    @foreach(var x in Model.LastThreeBlogs)
                         {
                     <div class="carousel-item active">
                         
@@ -179,19 +181,8 @@ Welcome aboard, traveler! 🌏✨</p>
         <!-- Top 10 -->
         <div class="top10">
             <h2>Most Populer 10 Blog</h2>
-            <ol>
-                <li>formas humanitatis pe</li>
-                <li>congue nihil imperdiet</li>
-                <li>Aadipisicing elit sed do</li>
-                <li>luptatum zzril</li>
-                <li>Claritas est etiam</li>
-                <li>claritatem insitam</li>
-                <li>velit esse molestie consequa</li>
-                <li>nostrud exerci tation ulla</li>
-                <li>demonstraverunt lectores</li>
-                <li>dolore te feu</li>
-            </ol>
-            <a href="#" class="see-all">See all hotels ›</a>
+         @await Html.PartialAsync("Partial2")
+            <a href="#" class="see-all">See all blogs ›</a>
         </div>
 
         <!-- Our Best Places -->

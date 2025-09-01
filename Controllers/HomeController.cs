@@ -19,8 +19,23 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var degerler = _context.MyBlog.ToList();
-        return View(degerler);
+        // Tüm liste
+        var allBlogs = _context.MyBlog.OrderByDescending(x => x.ID).ToList();
+
+        var lastThreeBlogs = _context.MyBlog
+                                      .OrderBy(x => x.ID) // küçük ID’li ilk bloglar
+                                      .Take(3)
+                                      .ToList();
+
+
+
+
+        var model = new MyIndexViewModel
+        {
+            AllBlogs = allBlogs,
+            LastThreeBlogs = lastThreeBlogs
+        };
+        return View(model);
     }
 
     public IActionResult Privacy()
@@ -57,6 +72,18 @@ public class HomeController : Controller
     public PartialViewResult Partial1()
     {
         var values = _context.MyBlog.OrderByDescending(x => x.ID).Take(3).ToList();
+        return PartialView(values);
+    }
+
+    public PartialViewResult Partial2()
+    {
+        var values = _context.MyBlog.OrderByDescending(x => x.ID).Take(10).ToList();
+        return PartialView(values);
+    }
+        
+          public PartialViewResult Partial3()
+    {
+        var values = _context.MyBlog.OrderByDescending(x => x.ID).Take(6).ToList();
         return PartialView(values);
         }
 }
