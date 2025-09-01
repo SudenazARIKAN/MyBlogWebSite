@@ -1,0 +1,55 @@
+
+@using travelproject.Models.Classes
+@model List<About>
+
+
+@{
+    ViewData["Title"] = "About";
+}
+<style>
+    .about-page {
+  text-align: left;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+h2 {
+  color: #751344; 
+  text-align: center; /* Ortaya almak için */
+  font-size: 2.5rem; /* Boyutu artırmak için */
+  margin: 1rem 0; /* Üst-alt boşluk */
+  font-weight: bold; /* Daha belirgin */
+}
+</style>
+
+
+<h2>About Page</h2>
+<div class="about-page">
+    @foreach (var x in Model)
+    {
+        @* Büyük görsel *@
+        <div class="hero-image">
+            <img src="@x.PhotoUrl" class="img-fluid" alt="Travel Image" />
+        </div>
+
+        @* Uzun metin *@
+        <div class="about-text">
+            <p>@x.Explanation</p>
+        </div>
+    }
+</div>
+

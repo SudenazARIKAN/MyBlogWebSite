@@ -1,0 +1,56 @@
+@using travelproject.Models.Classes
+@model List<MyBlog>
+
+<div class="container mt-4">
+    
+  <div class="row">
+ @foreach(var x in Model){   
+    <!-- Balkan Tour -->
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="@x.BlogImage" class="card-img-top" alt="Balkan Tour">
+        <div class="card-body">
+          <h5 class="card-title text-danger">@x.Title</h5>
+          <h6>@x.Date.ToString("dd.MM.yyyy")</h6>
+          <p class="card-text">
+            @x.Explanation.Substring(0,170)
+          <br>
+          </p>
+          <a href="#" class="btn btn-danger">Read More >></a>
+        </div>
+      </div>
+    </div>
+}
+    <!-- Europe Tour 
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="/img/alex-vasey-3lxrM5yvkcI-unsplash.jpg" class="card-img-top" alt="Europe Tour">
+        <div class="card-body">
+          <h5 class="card-title text-danger">Europe Tour</h5>
+          <h6>$1100</h6>
+          <p class="card-text">
+            Join our exclusive Europe tours and explore the charm of Paris, the history of Rome, the beauty of Amsterdam, and more. From breathtaking landmarks to hidden gems, we create unforgettable travel experiences. Book your journey today ! 🌍✈️
+          </p>
+          <a href="#" class="btn btn-danger">Read More >></a>
+        </div>
+      </div>
+    </div>-->
+
+    <!-- Istanbul Tour 
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <img src="/img/ibrahim-uzun-9FkQpB2rVjw-unsplash.jpg" class="card-img-top" alt="Istanbul Tour">
+        <div class="card-body">
+          <h5 class="card-title text-danger">Istanbul Tour</h5>
+          <h6>$900</h6>
+          <p class="card-text">
+            Explore the vibrant city of Istanbul with our exclusive tours. From the majestic Hagia Sophia to the bustling Grand Bazaar and scenic Bosphorus views, every moment is a memorable experience. Book your Istanbul adventure today and immerse yourself in history and culture! 🌍✈️
+          <br>
+          </p>
+          <a href="#" class="btn btn-danger">Read More >></a>
+        </div>
+      </div>
+    </div>-->
+
+  </div>
+</div>

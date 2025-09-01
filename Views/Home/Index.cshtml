@@ -1,0 +1,227 @@
+﻿@using travelproject.Models.Classes
+@model List<MyBlog>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+    #travelSlider img {
+        width: 100%;
+        height: 500px; 
+        object-fit: cover;
+    }
+
+    .col-md-4 {
+        margin-top: 5rem; 
+    }
+
+    .col-md-4 .list-group-item {
+        font-size: 1.2rem;    
+        font-weight: 600;     
+        padding-top: 2rem; 
+        padding-bottom: 2rem;
+    }
+
+    .col-md-8 .carousel {
+        margin-bottom: 4rem;
+    }
+
+    h3 {
+        color: #751344;
+    }
+
+    .card-title {
+        color: #751344;
+    }
+
+    .btn-primary {
+        background-color: #751344;
+        border-color: #751344;
+        color: #ffffff;
+    }
+
+    .btn-primary:hover {
+        background-color: #de1619;
+        border-color: #de1619;
+    }
+
+    .see-all {
+        display: inline-block;
+        margin-top: 5px;
+        color: #9b4d66;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-decoration: none;
+    }
+
+    .see-all:hover {
+        text-decoration: underline;
+    }
+
+    /* Top 10 ve Best Places */
+    .top10-container {
+        display: flex;
+        gap: 50px;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+    }
+
+    .top10 {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .top10 h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: #751344;
+    }
+
+    .top10 ol {
+        padding-left: 20px;
+    }
+
+    .top10 li {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .best-places {
+        flex: 2;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .place {
+        display: flex;
+        gap: 0.5rem;
+        background: #fff;
+        padding: 0.5rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        align-items: flex-start;
+    }
+
+    .place img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .place p {
+        font-size: 0.75rem;
+        margin: 0;
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Sol Menü -->
+        <div class="col-md-4">
+            <ul class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">🍽️ Restaurants</a>
+                <a href="#" class="list-group-item list-group-item-action">✈️ Flights</a>
+                <a href="#" class="list-group-item list-group-item-action">🎡 Things to Do</a>
+                <a href="#" class="list-group-item list-group-item-action">🏠 Vacation Rents</a>
+            </ul>
+        </div>
+
+        <!-- Slider -->
+        <div class="col-md-8">
+            <div id="travelSlider" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach(var x in Model)
+                        {
+                    <div class="carousel-item active">
+                        
+                        <img src="@x.BlogImage" class="d-block w-100" alt="Travel">
+                    </div>
+                   
+                    
+                  }
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#travelSlider" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#travelSlider" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="mt-6">Welcome to My Travel Blog</h3>
+    <p> Hello and welcome!
+This blog is the beginning of a journey where I’ll be sharing my travel experiences, stories, and tips from around the world. Traveling is not just about visiting new places, but also about discovering cultures, meeting people, and creating memories that last a lifetime.
+Here, you’ll find:<br>
+📍 Hidden gems and must-see destinations<br>
+🍲 Local food experiences worth trying<br>
+🛤️ Personal travel stories and reflections<br>
+💡 Practical tips to make your trips easier and more enjoyable<br>
+Whether you’re an adventurer seeking inspiration for your next trip, or someone who simply loves exploring through words and pictures, I hope this blog feels like a cozy corner for your wanderlust.
+So, fasten your seatbelt and get ready to explore the world with me.
+Welcome aboard, traveler! 🌏✨</p> 
+
+
+@await Html.PartialAsync("Partial1")
+
+
+
+    <!-- Top 10 ve Best Places -->
+    <div class="top10-container">
+        <!-- Top 10 -->
+        <div class="top10">
+            <h2>Most Populer 10 Blog</h2>
+            <ol>
+                <li>formas humanitatis pe</li>
+                <li>congue nihil imperdiet</li>
+                <li>Aadipisicing elit sed do</li>
+                <li>luptatum zzril</li>
+                <li>Claritas est etiam</li>
+                <li>claritatem insitam</li>
+                <li>velit esse molestie consequa</li>
+                <li>nostrud exerci tation ulla</li>
+                <li>demonstraverunt lectores</li>
+                <li>dolore te feu</li>
+            </ol>
+            <a href="#" class="see-all">See all hotels ›</a>
+        </div>
+
+        <!-- Our Best Places -->
+        <div class="best-places">
+           
+            <div class="place">
+                <img src="https://picsum.photos/200/120?random=1" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+            </div>
+            <div class="place">
+            
+                <img src="https://picsum.photos/200/120?random=2" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+            </div>
+            <div class="place">
+                <img src="https://picsum.photos/200/120?random=3" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+            </div>
+            <div class="place">
+                <img src="https://picsum.photos/200/120?random=4" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+            </div>
+            <div class="place">
+                <img src="https://picsum.photos/200/120?random=5" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+            </div>
+            <div class="place">
+                <img src="https://picsum.photos/200/120?random=6" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
+            </div>
+        </div>
+    </div>
+</div>
