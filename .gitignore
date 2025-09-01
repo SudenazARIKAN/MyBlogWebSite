@@ -1,0 +1,35 @@
+# Build klasörleri
+bin/
+obj/
+
+# Kullanıcı ayarları
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio çalışma dosyaları
+.vs/
+
+# VS Code ayarları
+.vscode/
+
+# MacOS gereksiz dosyaları
+.DS_Store
+
+# Log ve temp dosyaları
+*.log
+*.tlog
+
+# Publish output
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+publish/
+
+# Gizli ayarlar
+appsettings.Development.json
+bin/
+obj/
+.DS_Store
