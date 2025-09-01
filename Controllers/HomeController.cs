@@ -27,13 +27,17 @@ public class HomeController : Controller
                                       .Take(3)
                                       .ToList();
 
-
+  var lastSixBlogs = _context.MyBlog
+                                      .OrderBy(x => x.ID) // küçük ID’li ilk bloglar
+                                      .Take(6)
+                                      .ToList();
 
 
         var model = new MyIndexViewModel
         {
             AllBlogs = allBlogs,
-            LastThreeBlogs = lastThreeBlogs
+            LastThreeBlogs = lastThreeBlogs,
+            LastSixBlogs = lastSixBlogs
         };
         return View(model);
     }
@@ -80,10 +84,11 @@ public class HomeController : Controller
         var values = _context.MyBlog.OrderByDescending(x => x.ID).Take(10).ToList();
         return PartialView(values);
     }
-        
-          public PartialViewResult Partial3()
+
+    public PartialViewResult Partial3()
     {
         var values = _context.MyBlog.OrderByDescending(x => x.ID).Take(6).ToList();
         return PartialView(values);
-        }
-}
+    }
+}   
+

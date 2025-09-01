@@ -181,38 +181,16 @@ Welcome aboard, traveler! 🌏✨</p>
         <!-- Top 10 -->
         <div class="top10">
             <h2>Most Populer 10 Blog</h2>
-         @await Html.PartialAsync("Partial2")
+            <div class="place">
+         @await Html.PartialAsync("Partial2",Model)
+         </div>
             <a href="#" class="see-all">See all blogs ›</a>
         </div>
 
         <!-- Our Best Places -->
         <div class="best-places">
+            @await Html.PartialAsync("Partial3",Model)
            
-            <div class="place">
-                <img src="https://picsum.photos/200/120?random=1" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
-            </div>
-            <div class="place">
-            
-                <img src="https://picsum.photos/200/120?random=2" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
-            </div>
-            <div class="place">
-                <img src="https://picsum.photos/200/120?random=3" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
-            </div>
-            <div class="place">
-                <img src="https://picsum.photos/200/120?random=4" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
-            </div>
-            <div class="place">
-                <img src="https://picsum.photos/200/120?random=5" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
-            </div>
-            <div class="place">
-                <img src="https://picsum.photos/200/120?random=6" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet</p>
-            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,52 @@
+@using travelproject.Models.Classes
+@model travelproject.Models.MyIndexViewModel
+
+<style>
+.best-places {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* biraz daha geniş min kutu */
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.place {
+    display: flex;
+    align-items: flex-start; 
+    gap: 15px;
+    background-color: #f8f8f8;
+    padding: 15px; /* kutuyu biraz daha geniş yaptık */
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    height: auto;
+}
+
+.place img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0; /* resim küçülmesin */
+}
+
+.place p {
+    margin: 0;
+    word-wrap: break-word;
+    flex: 1; /* resmin sağındaki tüm boş alanı kaplar */
+    font-size: 0.8rem;
+}
+
+
+
+
+</style>
+
+<div class="best-places">
+    @foreach (var x in Model.LastSixBlogs)
+    {
+        <div class="place">
+            <img src="@x.BlogImage" style="width:140px; height:140px;" alt="">
+            <p>@x.Explanation.Substring(0, 120)</p>
+        </div>
+    }
+</div>
