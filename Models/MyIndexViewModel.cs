@@ -8,6 +8,8 @@ namespace travelproject.Models
     {
         public List<MyBlog> AllBlogs { get; set; }
         public List<MyBlog> LastThreeBlogs { get; set; }
-         public List<MyBlog> LastSixBlogs { get; set; }
+        public List<MyBlog> LastSixBlogs { get; set; }
+        public List<MyBlog> LastTenBlogs { get; set; }
+           public MyBlog NewBlog { get; set; }
     }
 }

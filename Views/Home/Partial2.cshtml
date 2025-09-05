@@ -2,7 +2,7 @@
 @model travelproject.Models.MyIndexViewModel
 
    <ol>
-        @foreach(var blog in Model.AllBlogs)
+        @foreach(var blog in Model.LastTenBlogs)
         {
             <li>@blog.Title</li>
         }

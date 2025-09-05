@@ -26,6 +26,6 @@ namespace travelproject.Models.Classes
         public int BlogID { get; set; }
 
         [ForeignKey("BlogID")]
-        public MyBlog Blog { get; set; }
+        public virtual MyBlog Blog { get; set; }
     }
 }

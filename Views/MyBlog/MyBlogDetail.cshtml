@@ -1,0 +1,109 @@
+@using travelproject.Models.Classes
+@model List<MyBlog>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "MyBlogDetail";
+}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+	<link href="~/css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="~/css/style.css" rel='stylesheet' type='text/css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
+	/>
+	
+
+
+</head>
+<body>
+
+<div class="single">
+	 <div class="container">
+		  <div class="col-md-8 single-main">				 
+			  <div class="single-grid">
+                @foreach(var x in Model){ 
+					<img src="@x.BlogImage" alt="" style="margin-bottom:20px"/>						 					 
+					<h2>@x.Title</h2>
+                    <p>@x.Explanation
+					</p>
+                    }
+			  </div>
+			 <ul class="comment-list">
+		  		   
+		  		   <li>
+    <img src="~/wwwroot/img/avatar.png class="img-responsive" alt="Avatar">
+</li>
+
+		  		   <div class="desc">
+		  		   <p>Sudenaz yorum yapacak.<a href="#" title="Posts by admin" rel="author"></a></p>
+		  		   </div>
+		  		   <div class="clearfix"></div>
+		  		   </li>
+		  	  </ul>
+               
+		  		   
+	 <ul class="comment-list">
+		  		   
+		  		   <li>
+    <img src="~/img/blank-profile-picture-973460_1280.png class="img-responsive" alt="Avatar">
+</li>
+
+		  		   <div class="desc">
+		  		   <p>Sudenaz yorum yapacak.<a href="#" title="Posts by admin" rel="author"></a></p>
+		  		   </div>
+		  		   <div class="clearfix"></div>
+		  		   </li>
+		  	  </ul>
+
+              
+			  <div class="content-form">
+					 <h3>Leave a comment</h3>
+					<form>
+						<input type="text" placeholder="User Name" required/>
+						<input type="text" placeholder="Email" required/>
+						<textarea placeholder="Message"></textarea>
+						<input type="submit" value="SEND"/>
+				   </form>
+						 </div>
+		  </div>
+
+			  <div class="col-md-4 side-content">
+				 <div class="recent">
+					 <h3>RECENT POSTS</h3>
+					 <ul>
+					 <li><a href="#">Aliquam tincidunt mauris</a></li>
+					 <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+					 <li><a href="#">Nunc dignissim risus consecu</a></li>
+					 <li><a href="#">Cras ornare tristiqu</a></li>
+					 </ul>
+				 </div>
+				 <div class="comments">
+					 <h3>RECENT COMMENTS</h3>
+					 <ul>
+					 <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+					 <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+					 <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+					 </ul>
+				 </div>
+				 
+			  
+			  <div class="clearfix"></div>
+		  </div>
+	  </div>
+</div>
+<!---->
+
+</div>
+
+</body>
+</html>
